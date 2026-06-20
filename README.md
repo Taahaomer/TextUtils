@@ -116,7 +116,6 @@ TextUtils/
 │
 ├── package.json
 ├── package-lock.json
-└── README.md
 └── Assets
 └── MIT Liscense
 └── ...
