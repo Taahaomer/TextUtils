@@ -26,8 +26,8 @@ TextUtils is a React-based text utility web application that helps users perform
 
 ### Feature View
 
-![TextUtils Feature](./Assets/screenshot1.png)
-![TextUtils Feature](./Assets/screenshot2.png)
+![TextUtils Feature](./Assets/Screenshot1.png)
+![TextUtils Feature](./Assets/Screenshot2.png)
 
 ## Installation
 
