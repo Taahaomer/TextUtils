@@ -27,8 +27,6 @@ export default function TextForm(p) {
     }
 
     const handleIt = (event) => {
-        
-        console.log("change");
         setText (event.target.value);
     }
 
@@ -47,18 +45,18 @@ export default function TextForm(p) {
   return (
     <>
         <form>
-            <h1 style={{color : p.mode=="light" ? "black" : "white"}}>
+            <h1 style={{color : p.mode==="light" ? "black" : "white"}}>
                 {p.heading}
             </h1>
 
             <div className="form-group" >
-                <textarea  style= {{ backgroundColor: p.mode === "dark" ? 'grey' : 'white', color: p.mode === 'dark' ? 'white' : 'black' } } type="text" onChange={handleIt} value={text} className="form-control my-2 " placeholder="Enter Text" rows="8"/>
+                <textarea  style= {{ backgroundColor: p.mode === "dark" ? '#bcbcbc' : 'white', color: p.mode === 'dark' ? 'white' : 'black' } } type="text" onChange={handleIt} value={text} className="form-control my-2 " placeholder="Enter Text" rows="8"/>
             </div>
 
-            <button type="submit" className={`btn btn-${p.mode} my-2 mx-1`} onClick={uppCase}>Convert to upperCase</button>
-            <button type="submit" className={`btn btn-${p.mode} my-2 mx-1`} onClick={lowCase}>Convert to lowerCase</button>
+            <button type="submit" className={`btn btn-${p.mode} my-2 mx-1`} onClick={uppCase} disabled={text.length===0} >Convert to upperCase</button>
+            <button type="submit" className={`btn btn-${p.mode} my-2 mx-1`} onClick={lowCase} disabled={text.length===0}>Convert to lowerCase</button>
         </form>
-        <div className={`container text-${p.mode != 'light' ? 'white' : 'black'}`}>
+        <div className={`container text-${p.mode !== 'light' ? 'white' : 'black'}`}>
             <h2> Text Summary </h2>
             <p> {wordCheck()} words and {text.length} characters</p>
             <p> {parseFloat((0.008*wordCheck()).toFixed(3))} minutes read</p>

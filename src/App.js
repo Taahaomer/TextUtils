@@ -1,14 +1,15 @@
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import TextForm from './components/TextForm';
 import About from './components/About'
 import Alert from './components/Alert';
 import './App.css';
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 function App() {
 
       const [mode, setMode] = useState ("light");
-      const [navBg,setNavBg] = useState("")
+
 
       const toggleMode = () => {
           if (mode === 'light') {
@@ -64,15 +65,25 @@ function App() {
 
   return (
     <>
-      <Navbar me="Search here" he="100" mode={mode} navBg={navBg} toggleMode={toggleMode} toggleModeR={toggleModeR} toggleModeG={toggleModeG} toggleModeI={toggleModeI} />
-      <Alert alert={alert}></Alert>
-      <div className="container my-3">
-          <TextForm heading="Enter your Text" showAlert={showAlert} mode={mode}/>
-      </div>
-      <div className="container">
-        <About mode={mode}></About>
-      </div>
+    
+    <Router>
       
+        <Navbar me="Search here" he="100" mode={mode}  toggleMode={toggleMode} toggleModeR={toggleModeR} toggleModeG={toggleModeG} toggleModeI={toggleModeI} />
+        <Alert alert={alert}></Alert>
+      <Routes>
+
+
+        <Route exact path="/" element={<div class="container"> 
+                                     <TextForm heading="Enter your Text" showAlert={showAlert} mode={mode}/>
+                                </div>} />
+                                
+        <Route exact path="/About" element={<div class="container"> 
+                                           <About mode={mode}></About>
+                                     </div>} />
+
+      </Routes>
+
+    </Router>
     </>
   );
 }

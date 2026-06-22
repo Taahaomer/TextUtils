@@ -24,6 +24,7 @@ export default function About (props) {
     return (
         <>
             <div className="accordion" id="accordionExample">
+                <strong> <h1>About Us</h1> </strong>
                 <div className="accordion-item" style={modeChange}>
                     <h2 className="accordion-header">
                     <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
