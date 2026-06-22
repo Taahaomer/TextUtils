@@ -50,7 +50,7 @@ export default function TextForm(p) {
             </h1>
 
             <div className="form-group" >
-                <textarea  style= {{ backgroundColor: p.mode === "dark" ? '#bcbcbc' : 'white', color: p.mode === 'dark' ? 'white' : 'black' } } type="text" onChange={handleIt} value={text} className="form-control my-2 " placeholder="Enter Text" rows="8"/>
+                <textarea  style= {{ backgroundColor: p.mode === "dark" ? '#bcbcbc' : 'white', color: p.mode === 'dark' ? 'black' : 'black' } } type="text" onChange={handleIt} value={text} className="form-control my-2 " placeholder="Enter Text" rows="8"/>
             </div>
 
             <button type="submit" className={`btn btn-${p.mode} my-2 mx-1`} onClick={uppCase} disabled={text.length===0} >Convert to upperCase</button>
